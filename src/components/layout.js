@@ -5,7 +5,7 @@ import {
     navLinks,
     navLinkItem,
     navLinkText
-  } from './layout.module.css'
+  } from '../css/layout.module.css'
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`

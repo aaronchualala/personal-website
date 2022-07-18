@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "Metropolis Thin";
+    src: url("./fonts/Metropolis-Thin 400.otf");
+}
+
+@font-face {
+    font-family: "EB Garamond";
+    src: url("./fonts/EB Garamond Regular 400.ttf");
+}
+
+@font-face {
+    font-family: "EB Garamond";
+    src: url("./fonts/EB Garamond Bold 700.ttf");
+    font-weight: bold;
+}
+
+* {
+    text-decoration: none;
+    font-family: "EB Garamond";
+    /* padding: 0;
+    margin: 0; */
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.container {
+    margin: auto;
+    max-width: 500px;
+    font-family: sans-serif;
+}
+
+.container :is(h1, h2, h3, h4, h5, h6) {
+    font-weight: bold
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.nav-link-item {
+    padding-right: 2rem;
+}
+
+.nav-link-text {
+    font-family: "Metropolis Thin";
+    color: black;
+}
