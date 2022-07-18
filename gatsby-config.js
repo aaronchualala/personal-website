@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Personal Website`,
+    title: `Aaron Chua`,
     siteUrl: `https://aaronchua.tech`,
   },
   plugins: [
@@ -9,8 +9,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: `blog`,
-        path: `${__dirname}/data/blog`,
+        name: `scribbles`,
+        path: `${__dirname}/data/scribbles`,
       }
     },
     {

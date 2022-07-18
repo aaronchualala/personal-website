@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 
-const BlogPage = ({data}) => {
+const ScribblePage = ({data}) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
 
   return (
@@ -48,4 +48,4 @@ query($id: String) {
 }
 `
 
-export default BlogPage
+export default ScribblePage

@@ -17,10 +17,10 @@ const Layout = ({ pageTitle, children }) => {
       }
     }
   `)
-  const sections = ["Blog","Experience","Projects"]
+  const sections = ["🧑🏻‍💼 Experience","🛠 Projects", "✍🏼 Scribbles"]
   const sectionElements = sections.map((section)=>
     <li className={navLinkItem}>
-    <Link to={"/".concat(section.toLowerCase())} className={navLinkText}>
+    <Link to={"/".concat(section.slice(section.indexOf(" ")+1).toLowerCase())} className={navLinkText}>
       {section}
     </Link>
     </li>
@@ -31,7 +31,7 @@ const Layout = ({ pageTitle, children }) => {
         <ul className={navLinks}>
           <li className={navLinkItem}>
             <Link to="/" className={navLinkText}>
-                About
+                👋 About
             </Link>
           </li>
           {sectionElements}

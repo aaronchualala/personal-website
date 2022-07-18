@@ -2,14 +2,14 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
 
-const BlogPage = ({ data }) => {
+const ScribblePage = ({ data }) => {
   return (
-    <Layout pageTitle="Blog">
+    <Layout pageTitle="Scribbles">
       {
         data.allMdx.nodes.map((node) => (
           <div key={node.id}>
             <h2>
-              <Link to={`/blog/${node.slug}`}>
+              <Link to={`/scribble/${node.slug}`}>
                 {node.frontmatter.title}
               </Link>
             </h2>
@@ -25,7 +25,7 @@ export const query = graphql`
 query {
   allMdx(
     sort: {fields: frontmatter___date, order: DESC}
-    filter: {fileAbsolutePath: {regex: "/blog/"}}) {
+    filter: {fileAbsolutePath: {regex: "/scribble/"}}) {
     nodes {
       frontmatter {
         date(formatString: "MMMM D, YYYY")
@@ -38,4 +38,4 @@ query {
 }
 `
 
-export default BlogPage
+export default ScribblePage
