@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 
-const BlogPost = ({data}) => {
+const BlogPage = ({data}) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
 
   return (
@@ -15,12 +15,12 @@ const BlogPost = ({data}) => {
       image={image}
       alt={data.mdx.frontmatter.hero_image_alt}
       />
-      {/* <p>
+      <p>
         Photo Credit:{" "}
         <a href={data.mdx.frontmatter.hero_image_credit_link}>
           {data.mdx.frontmatter.hero_image_credit_text}
         </a>
-      </p> */}
+      </p>
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
@@ -48,4 +48,4 @@ query($id: String) {
 }
 `
 
-export default BlogPost
+export default BlogPage
