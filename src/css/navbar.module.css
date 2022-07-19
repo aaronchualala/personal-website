@@ -1,0 +1,44 @@
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.nav-link-item {
+    padding-right: 2rem;
+}
+
+.nav-link-text {
+    font-family: "Navbar";
+    color: black;
+    display: inline-block;
+    position: relative;
+    font-size: large;
+}
+
+.nav-link-text:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-link-text:hover:after {
+    transform: scaleX(1);
+}
+
+.nav-link-text-active:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(1);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+}
