@@ -1,22 +1,22 @@
 @font-face {
-    font-family: "Metropolis Thin";
+    font-family: "Body";
     src: url("./fonts/Metropolis-Thin 400.otf");
 }
 
 @font-face {
-    font-family: "EB Garamond";
+    font-family: "Navbar";
     src: url("./fonts/EB Garamond Regular 400.ttf");
 }
 
 @font-face {
-    font-family: "EB Garamond";
+    font-family: "Title";
     src: url("./fonts/EB Garamond Bold 700.ttf");
     font-weight: bold;
 }
 
 * {
     text-decoration: none;
-    font-family: "EB Garamond";
+    font-family: "Body";
     /* padding: 0;
     margin: 0; */
 }
@@ -28,11 +28,11 @@ body {
 .container {
     margin: auto;
     max-width: 500px;
-    font-family: sans-serif;
 }
 
-.container :is(h1, h2, h3, h4, h5, h6) {
-    font-weight: bold
+.container :is(h1) {
+    font-weight: bold;
+    font-family: "Title";
 }
 
 .nav-links {
@@ -46,9 +46,40 @@ body {
 }
 
 .nav-link-text {
-    font-family: "Metropolis Thin";
+    font-family: "Navbar";
     color: black;
+    display: inline-block;
+    position: relative;
+    font-size: large;
 }
+
+.nav-link-text:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-link-text:hover:after {
+    transform: scaleX(1);
+}
+
+.nav-link-text-active:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(1);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

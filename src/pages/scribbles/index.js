@@ -9,7 +9,7 @@ const ScribblePage = ({ data }) => {
         data.allMdx.nodes.map((node) => (
           <div key={node.id}>
             <h2>
-              <Link to={`/scribble/${node.slug}`}>
+              <Link to={`/scribbles/${node.slug}`}>
                 {node.frontmatter.title}
               </Link>
             </h2>
