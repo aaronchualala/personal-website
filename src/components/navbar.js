@@ -7,7 +7,6 @@ import {
     navLinkText,
     navLinkTextActive
   } from '../css/navbar.module.css'
-import { StaticImage } from 'gatsby-plugin-image'
 import SelfPhoto from "../images/self-photo-circle.jpg"
 
 const Navbar = () => {

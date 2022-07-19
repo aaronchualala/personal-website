@@ -10,6 +10,7 @@ const ProjectPage = ({data}) => {
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.name}>
+      <h1>{data.mdx.frontmatter.name}</h1>
       <p>Posted: {data.mdx.frontmatter.date}</p>
       <GatsbyImage
       image={image}
