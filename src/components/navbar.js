@@ -7,7 +7,7 @@ import {
     navLinkText,
     navLinkTextActive
   } from '../css/navbar.module.css'
-import SelfPhoto from "../images/self-photo-circle.jpg"
+import SelfPhoto from "../images/self-photo-circle.png"
 
 const Navbar = () => {
   const sections = ["Experience","Projects", "Scribbles"]

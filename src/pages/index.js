@@ -5,7 +5,7 @@ import { aboutContainer, column, row, text, name, byline, iconBar, intro, image 
 
 const AboutPage = () => {
   return (
-    <Layout pageTitle="About">
+    <Layout>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       <div class={aboutContainer}>
         <div class={row}>
@@ -22,7 +22,7 @@ const AboutPage = () => {
           <div class={column + " " + image}>
             <StaticImage
               alt="Aaron Profile"
-              src="../images/self-photo-circle.jpg"/>
+              src="../images/self-photo-circle.png"/>
           </div>
         </div>
       </div>

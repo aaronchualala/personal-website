@@ -6,6 +6,21 @@ module.exports = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-mdx",
+    "gatsby-transformer-sharp",
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: `src/images/self-photo-circle.png`,
+        icons: [
+          {
+            src: `src/images/self-photo-circle.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+        ],
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -27,7 +42,5 @@ module.exports = {
         path: `${__dirname}/data/projects`,
       }
     },
-    "gatsby-plugin-mdx",
-    "gatsby-transformer-sharp",
   ],
 }
