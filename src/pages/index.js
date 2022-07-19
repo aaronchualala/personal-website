@@ -13,9 +13,9 @@ const AboutPage = () => {
             <p class={name}>Aaron Chua</p>
             <p class={byline}>Business Analyst Intern @ Accenture</p>
             <div class={iconBar}>
-              <a href="https://www.linkedin.com/in/aaron-chua1/"><i class="fa fa-linkedin"></i></a> 
-              <a href="https://github.com/aaronchualala"><i class="fa fa-github"></i></a> 
-              <a href="https://aaronchua.tech"><i class="fa fa-globe"></i></a>
+              <a href="https://www.linkedin.com/in/aaron-chua1/"><i class="fa fa-linkedin" aria-label="linkedin"></i></a> 
+              <a href="https://github.com/aaronchualala"><i class="fa fa-github" aria-label="github"></i></a> 
+              <a href="https://aaronchua.tech"><i class="fa fa-globe" aria-label="website"></i></a>
             </div>
             <p class={intro}>I am a rising second-year student in the <a href="https://www.ntu.edu.sg/education/undergraduate-programme/renaissance-engineering-programme-(rep)">Renaissance Engineering Programme</a> at Nanyang Technological University. I use and build enterprise technologies to solve hard business problems. My goal is to understand, appreciate and improve complex systems so they can better serve the needs of both their users and stewards.</p>
           </div>

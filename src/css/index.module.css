@@ -81,4 +81,8 @@
         justify-content: center;
         align-items: center;
     }
+
+    .intro {
+        max-width: 450px;
+    }
 }
