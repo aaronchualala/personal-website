@@ -1,7 +1,7 @@
 .about-container {
     display: flex;
-    min-height: 88vh;
-    max-width: inherit;
+    min-height: 86vh;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
@@ -60,11 +60,11 @@
 
 .image {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1050px) {
     .row {
         display: block;
     }
@@ -84,5 +84,9 @@
 
     .intro {
         max-width: 450px;
+    }
+
+    .main-image {
+        justify-content: center;
     }
 }

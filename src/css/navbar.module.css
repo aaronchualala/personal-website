@@ -2,22 +2,22 @@
     display: flex;
     list-style: none;
     padding-left: 0;
-    justify-content: right;
-    height: 2vh
+    justify-content: flex-end;
+    height: 100%;
+    vertical-align: middle;
 }
 
 .nav-link-image {
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     float: left;
-    width: 25px;
+    width: 32px;
     height: inherit;
     vertical-align: middle;
 }
 
 .nav-link-item {
     padding-left: 2rem;
-    justify-content: right;
 }
 
 .nav-link-text {
@@ -25,7 +25,7 @@
     color: black;
     display: inline-block;
     position: relative;
-    font-size: large;
+    font-size: x-large;
 }
 
 .nav-link-text:after {
@@ -53,4 +53,14 @@
     bottom: 0;
     left: 0;
     background-color: black;
+}
+
+@media only screen and (max-width: 1050px) {
+    .nav-link-image {
+        width: 22px
+    }
+
+    .nav-link-text {
+        font-size: medium;
+    }
 }
