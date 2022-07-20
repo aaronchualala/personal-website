@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import {
+    navContainer,
     navLinks,
     navLinkImage,
     navLinkItem,
@@ -10,7 +11,7 @@ import {
 import SelfPhoto from "../images/self-photo-circle.png"
 
 const Navbar = () => {
-  const sections = ["Experience","Projects", "Scribbles"]
+  const sections = ["Experience","Projects", "Tags", "Scribbles"]
   const sectionElements = sections.map((section)=>
     <li className={navLinkItem}>
     <Link 
@@ -23,7 +24,7 @@ const Navbar = () => {
     </li>
   )
   return (
-    <nav>
+    <nav className={navContainer}>
       <Link to="/" className={navLinkImage}>
         <img 
           alt="Aaron Profile"

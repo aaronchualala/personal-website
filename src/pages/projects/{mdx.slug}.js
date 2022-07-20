@@ -1,27 +1,33 @@
 
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
+import kebabCase from "lodash/kebabCase"
 
 const ProjectPage = ({data}) => {
-  const image = getImage(data.mdx.frontmatter.hero_image)
+  const image = getImage(data.mdx.frontmatter.backgroundImage)
+  const tags = data.mdx.frontmatter.tags.map((tag)=>
+    <span>
+      <Link to={"/tags/"+kebabCase(tag)}>
+          #{kebabCase(tag)} {" "} 
+      </Link>
+    </span>
+  )
 
   return (
-    <Layout pageTitle={data.mdx.frontmatter.name}>
-      <h1>{data.mdx.frontmatter.name}</h1>
-      <p>Posted: {data.mdx.frontmatter.date}</p>
+    <Layout pageTitle={data.mdx.frontmatter.projTitle}>
+      <h1>{data.mdx.frontmatter.projTitle}</h1>
+      <p>Posted: {data.mdx.frontmatter.startDate}</p>
+      <div>
+        <span>Skills: </span>
+        {tags}
+      </div>
       <GatsbyImage
       image={image}
-      alt={data.mdx.frontmatter.hero_image_alt}
+      alt={data.mdx.frontmatter.backgroundImage_alt}
       />
-      <p>
-        Photo Credit:{" "}
-        <a href={data.mdx.frontmatter.hero_image_credit_link}>
-          {data.mdx.frontmatter.hero_image_credit_text}
-        </a>
-      </p>
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
@@ -34,19 +40,18 @@ query($id: String) {
   mdx(id: {eq: $id}) {
     body
     frontmatter {
-      name
-      date(formatString: "MMMM DD, YYYY")
-      hero_image_alt
-      hero_image_credit_link
-      hero_image_credit_text
-      hero_image {
-        childImageSharp {
-          gatsbyImageData(aspectRatio: 1.5)
-        }
-      }
+      projTitle
+      startDate(formatString: "MMMM DD, YYYY")
+      backgroundImage_alt
+      backgroundImage 
+      tags
     }
   }
 }
 `
-
 export default ProjectPage
+
+// {
+//   childImageSharp {
+//     gatsbyImageData(aspectRatio: 1.5)
+//   }}

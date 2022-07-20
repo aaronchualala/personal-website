@@ -10,10 +10,10 @@ const ProjectPage = ({ data }) => {
           <div key={node.id}>
             <h2>
               <Link to={`/projects/${node.slug}`}>
-                {node.frontmatter.name}
+                {node.frontmatter.projTitle}
               </Link>
             </h2>
-            <p>{node.frontmatter.date}</p>
+            <p>{node.frontmatter.endDate}</p>
           </div>
         ))
       }  
@@ -24,12 +24,12 @@ const ProjectPage = ({ data }) => {
 export const query = graphql`
 query {
   allMdx(
-    sort: {fields: frontmatter___date, order: DESC}
+    sort: {fields: frontmatter___endDate, order: DESC}
     filter: {fileAbsolutePath: {regex: "/projects/"}}) {
     nodes {
       frontmatter {
-        date(formatString: "MMMM D, YYYY")
-        name
+        endDate(formatString: "MMMM D, YYYY")
+        projTitle
       }
       id
       slug

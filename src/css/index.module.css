@@ -1,6 +1,6 @@
 .about-container {
     display: flex;
-    min-height: 86vh;
+    min-height: 70vh;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateY(40px);
 }
 
 .column {
@@ -62,6 +63,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    transform: translateX(-25px);
 }
 
 @media only screen and (max-width: 1050px) {
@@ -86,7 +88,7 @@
         max-width: 450px;
     }
 
-    .main-image {
-        justify-content: center;
+    .image {
+        transform: translateX(-15px) translateY(-15px) scale(90%);
     }
 }

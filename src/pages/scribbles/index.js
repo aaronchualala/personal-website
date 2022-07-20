@@ -10,10 +10,10 @@ const ScribblePage = ({ data }) => {
           <div key={node.id}>
             <h2>
               <Link to={`/scribbles/${node.slug}`}>
-                {node.frontmatter.title}
+                {node.frontmatter.scribbleTitle}
               </Link>
             </h2>
-            <p>{node.frontmatter.date}</p>
+            <p>{node.frontmatter.publishDate}</p>
           </div>
         ))
       }  
@@ -24,12 +24,12 @@ const ScribblePage = ({ data }) => {
 export const query = graphql`
 query {
   allMdx(
-    sort: {fields: frontmatter___date, order: DESC}
+    sort: {fields: frontmatter___publishDate, order: DESC}
     filter: {fileAbsolutePath: {regex: "/scribble/"}}) {
     nodes {
       frontmatter {
-        date(formatString: "MMMM D, YYYY")
-        title
+        publishDate(formatString: "MMMM D, YYYY")
+        scribbleTitle
       }
       id
       slug

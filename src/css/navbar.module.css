@@ -1,19 +1,21 @@
+.nav-container {
+    display: table;
+    width: 100%;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
-    padding-left: 0;
+    padding-left: 0px;
+    padding-top: 25px;
     justify-content: flex-end;
-    height: 100%;
-    vertical-align: middle;
 }
 
 .nav-link-image {
-    display: flex;
-    justify-content: flex-start;
+    padding: 4px;
+    transform: translateY(28px);
     float: left;
-    width: 32px;
-    height: inherit;
-    vertical-align: middle;
+    width: 50px;
 }
 
 .nav-link-item {
@@ -55,9 +57,11 @@
     background-color: black;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 580px) {
     .nav-link-image {
-        width: 22px
+        width: 30px;
+        transform: translateY(32px);
+
     }
 
     .nav-link-text {
