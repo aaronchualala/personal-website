@@ -11,7 +11,7 @@ import {
 import SelfPhoto from "../images/self-photo-circle.png"
 
 const Navbar = () => {
-  const sections = ["Experience","Projects", "Tags", "Scribbles"]
+  const sections = ["Experience","Projects", "Skills", "Scribbles"]
   const sectionElements = sections.map((section)=>
     <li className={navLinkItem}>
     <Link 

@@ -3,15 +3,15 @@ import kebabCase from "lodash/kebabCase"
 import { Link, graphql } from "gatsby"
 import Layout from '../../components/layout'
 
-const TagsPage = ({data}) => {
+const SkillsPage = ({data}) => {
   return (
     <Layout pageTitle="Scribbles">
       {
-        data.allMdx.group.map((tag) => (
-          <div key={tag.fieldValue}>
+        data.allMdx.group.map((skill) => (
+          <div key={skill.fieldValue}>
             <h2>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
+              <Link to={`/skills/${kebabCase(skill.fieldValue)}/`}>
+                {skill.fieldValue} ({skill.totalCount})
               </Link>
             </h2>
           </div>
@@ -24,7 +24,7 @@ const TagsPage = ({data}) => {
 export const pageQuery = graphql`
   query {
     allMdx(limit: 2000) {
-      group(field: frontmatter___tags) {
+      group(field: frontmatter___skills) {
         fieldValue
         totalCount
       }
@@ -32,4 +32,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default TagsPage
+export default SkillsPage

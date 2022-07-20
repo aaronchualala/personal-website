@@ -8,13 +8,13 @@ import kebabCase from "lodash/kebabCase"
 
 const ProjectPage = ({data}) => {
   const image = getImage(data.mdx.frontmatter.backgroundImage)
-  const tags = data.mdx.frontmatter.tags.map((tag)=>
+  const skills = data.mdx.frontmatter.skills?data.mdx.frontmatter.skills.map((skill)=>
     <span>
-      <Link to={"/tags/"+kebabCase(tag)}>
-          #{kebabCase(tag)} {" "} 
+      <Link to={"/skills/"+kebabCase(skill)}>
+          #{kebabCase(skill)} {" "} 
       </Link>
     </span>
-  )
+  ):""
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.projTitle}>
@@ -22,7 +22,7 @@ const ProjectPage = ({data}) => {
       <p>Posted: {data.mdx.frontmatter.startDate}</p>
       <div>
         <span>Skills: </span>
-        {tags}
+        {skills}
       </div>
       <GatsbyImage
       image={image}
@@ -44,7 +44,7 @@ query($id: String) {
       startDate(formatString: "MMMM DD, YYYY")
       backgroundImage_alt
       backgroundImage 
-      tags
+      skills
     }
   }
 }

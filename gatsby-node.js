@@ -4,7 +4,7 @@ const _ = require("lodash")
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   // const projectTemplate = path.resolve("src/pages/projects/project_template.js")
-  const tagTemplate = path.resolve("src/pages/tags/tag_template.js")
+  const skillTemplate = path.resolve("src/pages/skills/skill_template.js")
   const result = await graphql(`
     {
       postsRemark: allMdx(
@@ -15,13 +15,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             slug
             frontmatter {
-              tags
+              skills
             }
           }
         }
       }
-      tagsGroup: allMdx(limit: 2000) {
-        group(field: frontmatter___tags) {
+      skillsGroup: allMdx(limit: 2000) {
+        group(field: frontmatter___skills) {
           fieldValue
         }
       }
@@ -40,15 +40,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //     component: projectTemplate,
   //   })
   // })
-  // Extract tag data from query
-  const tags = result.data.tagsGroup.group
-  // Make tag pages
-  tags.forEach(tag => {
+  // Extract skill data from query
+  const skills = result.data.skillsGroup.group
+  // Make skill pages
+  skills.forEach(skill => {
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
-      component: tagTemplate,
+      path: `/skills/${_.kebabCase(skill.fieldValue)}/`,
+      component: skillTemplate,
       context: {
-        tag: tag.fieldValue,
+        skill: skill.fieldValue,
       },
     })
   })
