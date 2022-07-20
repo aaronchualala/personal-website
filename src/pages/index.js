@@ -17,7 +17,7 @@ const AboutPage = () => {
               <a href="https://github.com/aaronchualala"><i class="fa fa-github" aria-label="github"></i></a> 
               <a href="https://aaronchua.tech"><i class="fa fa-globe" aria-label="website"></i></a>
             </div>
-            <p class={intro}>I am a rising second-year student in the <a href="https://www.ntu.edu.sg/education/undergraduate-programme/renaissance-engineering-programme-(rep)">Renaissance Engineering Programme</a> at Nanyang Technological University. I use and build enterprise technologies to solve hard business problems. My goal is to understand, appreciate and improve complex systems so they can better serve the needs of both their users and stewards.</p>
+            <p class={intro}>I am a rising second-year student in the <a href="https://www.ntu.edu.sg/education/undergraduate-programme/renaissance-engineering-programme-(rep)">Renaissance Engineering Programme</a> at Nanyang Technological University. My goal is to understand, appreciate and improve complex systems so they can better serve the needs of their users and stewards. At present, I focus on using enterprise technologies to solve hard business problems.</p>
           </div>
           <div class={column + " " + image}>
             <StaticImage
