@@ -5,6 +5,7 @@ import Layout from '../../components/layout'
 const ProjectPage = ({ data }) => {
   return (
     <Layout pageTitle="Projects">
+      <h1>Projects</h1>
       {
         data.allMdx.nodes.map((node) => (
           <div key={node.id}>

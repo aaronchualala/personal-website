@@ -19,7 +19,6 @@ const Layout = ({ pageTitle, children }) => {
       <title>{pageTitle?pageTitle+" | ":""}{data.site.siteMetadata.title}</title>      
       <Navbar/>
       <main>
-      {/* <h1>{pageTitle}</h1> */}
         {children}
       </main>
       <Footer/>

@@ -2,10 +2,13 @@ import React from "react"
 import kebabCase from "lodash/kebabCase"
 import { Link, graphql } from "gatsby"
 import Layout from '../../components/layout'
+import {skillsContainer} from '../../css/skills.module.css'
 
 const SkillsPage = ({data}) => {
   return (
     <Layout pageTitle="Scribbles">
+      <h1>Skills</h1>
+      <main className={skillsContainer}>
       {
         data.allMdx.group.map((skill) => (
           <div key={skill.fieldValue}>
@@ -17,6 +20,7 @@ const SkillsPage = ({data}) => {
           </div>
         ))
       } 
+      </main>
     </Layout>
   )
 }

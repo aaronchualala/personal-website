@@ -55,6 +55,7 @@
 /* Style the tab content */
 .tabcontent {
     box-sizing: border-box;
+    position: relative;
     float: left;
     padding: 0px 14px;
     margin: 0% 3%;
@@ -63,6 +64,20 @@
     max-height: 80vh;
     overflow: auto;
 }
+
+/* .tabcontent::before {
+    content: "";
+    background-image: url('./self-photo-bg.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.25;
+} */
 
 .tabtext {
     text-align: justify;

@@ -2,7 +2,9 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
-import { tab, tabcontent, activetab, tabtext } from '../../css/experience.module.css'
+import { tab, tabcontent, activetab, tabtext, image } from '../../css/experience.module.css'
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 
 
 const ExperiencePage = ({ data }) => {
@@ -18,6 +20,7 @@ const ExperiencePage = ({ data }) => {
 
   return (
     <Layout pageTitle="Experience">
+      <h1>Experience</h1>
       <div className={tab}>
       {
           data.allMdx.nodes.map((node) => (
@@ -50,11 +53,15 @@ const ExperiencePage = ({ data }) => {
           {view.startDate?view.startDate+" – ":""}
           {view.endDate?view.endDate:(view.startDate?"Present":"")}
         </h4>
+        <img/>
         <div className={tabtext}> 
             <MDXRenderer>
               {view.myImpact}
             </MDXRenderer>
         </div>
+        {/* <StaticImage class={image}
+              alt="Company Profile"
+              src="../../images/self-photo-circle.png"/> */}
       </div>
     </Layout>
   )
@@ -75,7 +82,6 @@ query {
         endDate(formatString: "MMM YYYY")
       }
       id
-      slug
       body
     }
   }

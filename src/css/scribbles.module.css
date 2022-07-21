@@ -1,0 +1,24 @@
+.scribbles-container {
+    text-align: center;
+}
+
+.scribbles-header {
+    text-align: center;
+}
+
+.scribbles-byline {
+    text-align: center;
+    padding: 0vw 20vw;
+    text-justify: inter-word;
+}
+
+.scribbles-break {
+    /* padding: 3vw; */
+    width: 30%
+}
+
+@media only screen and (max-width: 650px) {
+    .scribbles-container {
+        column-count: 1;
+    }
+}

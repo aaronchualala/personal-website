@@ -50,7 +50,7 @@ query($id: String) {
 `
 export default ProjectPage
 
-// backgroundImage  {
+// {
 //   childImageSharp {
 //     gatsbyImageData(aspectRatio: 1.5)
 //   }}
