@@ -1,0 +1,11 @@
+---
+tabTitle: "Creating dashboards and automating processes for Government Ministry"
+orgName: "Ministry of Sustainability and the Environment"
+orgLink: "https://www.mse.gov.sg"
+myJob: "Data Analytics and Programming Intern"
+startDate: 2022-05-01
+endDate: 2022-08-30
+backgroundImage: "./min_sust_env.png"
+backgroundImage_alt: "min_sust_env"
+projects: []
+---

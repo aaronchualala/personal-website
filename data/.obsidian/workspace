@@ -1,0 +1,136 @@
+{
+  "main": {
+    "id": "dc6d84eff675102a",
+    "type": "split",
+    "children": [
+      {
+        "id": "5ef11e17fa32836d",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d472d3e262110199",
+    "type": "split",
+    "children": [
+      {
+        "id": "672d7089b974037c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d55b8c08167bb1ae",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "f1dff4c0660c6953",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e7175193b9f9cd3b",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 376.5
+  },
+  "right": {
+    "id": "995781b8d62515c5",
+    "type": "split",
+    "children": [
+      {
+        "id": "1ff2caaa63491993",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d4c1ae6a2672cc91",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c6b3294b40d23764",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "27ef24f5c41eeba4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "02c963f8ee59c523",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "d55b8c08167bb1ae",
+  "lastOpenFiles": [
+    "experience/2025/nanyang-technological-university.md",
+    "experience/2021/finquest.jpeg",
+    "experience/2022/renaissance-engineers-are-caring-humans.md",
+    "experience/2025/nanyang_technological_university.png",
+    "experience/2022/one-hundred-and-eighty-degree-consulting.md",
+    "experience/2022/reclub.jpeg",
+    "experience/2022/one-hundred-and-eighty-degree-consulting.png",
+    "experience/2022/accenture.jpg",
+    "experience/2022/accenture.md",
+    "experience/2021/singapore-armed-forces.md"
+  ]
+}
