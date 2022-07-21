@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(40px);
+    transform: translateY(20px);
 }
 
 .column {

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
-import { tab, tabContent } from '../../css/experience.module.css'
+import { tab, tabcontent } from '../../css/experience.module.css'
 
 
 const ExperiencePage = ({ data }) => {
@@ -10,7 +10,7 @@ const ExperiencePage = ({ data }) => {
 
   return (
     <Layout pageTitle="Experience">
-      <div class={tab}>
+      <div className={tab}>
       {
           data.allMdx.nodes.map((node) => (
             <>
@@ -31,7 +31,8 @@ const ExperiencePage = ({ data }) => {
           )
       }
       </div>
-      <div class={tabContent}>
+
+      <div className={tabcontent}>
         <h2>{view.myJob}<a href={view.orgLink}>{view.orgName?" @"+view.orgName:""}</a></h2>
         <h4>
           {view.startDate?view.startDate+" – ":""}
@@ -40,8 +41,7 @@ const ExperiencePage = ({ data }) => {
         {view.myImpact && 
           <MDXRenderer>
             {view.myImpact}
-          </MDXRenderer>
-        }
+          </MDXRenderer>}
       </div>
     </Layout>
   )

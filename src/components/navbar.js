@@ -31,9 +31,9 @@ const Navbar = () => {
   return (
     <>
 
-    <span className={navOpener} onClick={()=>setSideBar("block")}>&#9776;</span>
+    <span className={navOpener} onClick={()=>setSideBar("block")} aria-hidden="true" >&#9776;</span>
     <div className={navSideBar} style={{display:sideBar}}>
-      <a className={closeBtn} onClick={()=>setSideBar("none")}>&times;</a>
+      <button className={closeBtn} onClick={()=>setSideBar("none")} aria-hidden="true" >&times;</button>
       <ul style={{listStyle: "none"}}>
         <li>
             <Link to="/" className={navSideBarItem} partiallyActive={true}>

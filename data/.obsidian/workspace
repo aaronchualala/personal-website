@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "5ef11e17fa32836d",
+        "id": "3abeb57d8ff3c03f",
         "type": "leaf",
         "state": {
           "type": "empty",
@@ -53,7 +53,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -120,8 +121,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "d55b8c08167bb1ae",
+  "active": "3abeb57d8ff3c03f",
   "lastOpenFiles": [
+    "experience/example.md",
     "experience/2025/nanyang-technological-university.md",
     "experience/2021/finquest.jpeg",
     "experience/2022/renaissance-engineers-are-caring-humans.md",
@@ -130,7 +132,6 @@
     "experience/2022/reclub.jpeg",
     "experience/2022/one-hundred-and-eighty-degree-consulting.png",
     "experience/2022/accenture.jpg",
-    "experience/2022/accenture.md",
-    "experience/2021/singapore-armed-forces.md"
+    "experience/2022/accenture.md"
   ]
 }

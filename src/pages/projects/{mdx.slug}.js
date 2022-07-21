@@ -43,7 +43,6 @@ query($id: String) {
       projTitle
       startDate(formatString: "MMMM DD, YYYY")
       backgroundImage_alt
-      backgroundImage 
       skills
     }
   }
@@ -51,7 +50,7 @@ query($id: String) {
 `
 export default ProjectPage
 
-// {
+// backgroundImage  {
 //   childImageSharp {
 //     gatsbyImageData(aspectRatio: 1.5)
 //   }}
