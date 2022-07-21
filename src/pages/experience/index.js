@@ -2,11 +2,19 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
-import { tab, tabcontent } from '../../css/experience.module.css'
+import { tab, tabcontent, activetab, tabtext } from '../../css/experience.module.css'
 
 
 const ExperiencePage = ({ data }) => {
-  const [view, setView] = React.useState({orgName:"", orgLink:"",myJob:"",startDate:"",endDate:"",myImpact:""})
+  const defaultExperience =  data.allMdx.nodes[Object.keys(data.allMdx.nodes)[0]]
+  const [view, setView] = React.useState({
+    orgName:defaultExperience.frontmatter.orgName, 
+    orgLink:defaultExperience.frontmatter.orgLink,
+    myJob:defaultExperience.frontmatter.myJob,
+    startDate:defaultExperience.frontmatter.startDate,
+    endDate:defaultExperience.frontmatter.endDate,
+    myImpact:defaultExperience.body})
+  const [activeE,setActiveE] = React.useState(defaultExperience.id)
 
   return (
     <Layout pageTitle="Experience">
@@ -14,7 +22,10 @@ const ExperiencePage = ({ data }) => {
       {
           data.allMdx.nodes.map((node) => (
             <>
-              <button key={node.id} onClick={() => setView(
+              <button 
+                className={node.id === activeE && activetab}
+                key={node.id} 
+                onClick={() => {console.log(defaultExperience);setActiveE(node.id);setView(
                 {
                   orgName: node.frontmatter.orgName,
                   orgLink: node.frontmatter.orgLink,
@@ -23,7 +34,7 @@ const ExperiencePage = ({ data }) => {
                   endDate: node.frontmatter.endDate,
                   myImpact: node.body
                 }
-              )}>
+              )}}>
                 {node.frontmatter.tabTitle}
               </button>
             </>
@@ -31,6 +42,7 @@ const ExperiencePage = ({ data }) => {
           )
       }
       </div>
+      
 
       <div className={tabcontent}>
         <h2>{view.myJob}<a href={view.orgLink}>{view.orgName?" @"+view.orgName:""}</a></h2>
@@ -38,10 +50,11 @@ const ExperiencePage = ({ data }) => {
           {view.startDate?view.startDate+" – ":""}
           {view.endDate?view.endDate:(view.startDate?"Present":"")}
         </h4>
-        {view.myImpact && 
-          <MDXRenderer>
-            {view.myImpact}
-          </MDXRenderer>}
+        <div className={tabtext}> 
+            <MDXRenderer>
+              {view.myImpact}
+            </MDXRenderer>
+        </div>
       </div>
     </Layout>
   )

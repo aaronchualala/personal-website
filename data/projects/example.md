@@ -10,4 +10,4 @@ backgroundImage_alt: "P1"
 skills: ["animals", "Chicago asdfs", "zoos"]
 ---
 
-content
+https://elated-ride-639e34.netlify.app/blog

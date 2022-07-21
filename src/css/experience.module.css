@@ -2,8 +2,8 @@
 .tab {
     box-sizing: border-box;
     float: left;
-    /* border: 1px solid #ccc; */
-    background-color: #f1f1f1;
+    /* border-right: 1px solid #ccc; */
+    /* background-color: #f1f1f1; */
     justify-content: right;
     width: 30%;
     max-height: 80vh;
@@ -25,25 +25,48 @@
     font-size: larger;
 }
 
+.activetab {
+    background-color: #ddd !important;
+    border-left: 3px solid #999 !important;
+}
+
 /* Change background color of buttons on hover */
+
 .tab button:hover {
     background-color: #ddd;
 }
 
-/* Create an active/current "tab button" class */
-.tab button.active {
-    background-color: #ccc;
+/* .tab button:before {
+    content: '' !important;
+    position: absolute !important;
+    height: 100% !important;
+    transform: scaleY(0) !important;
+    width: 3px !important;
+    top: 0 !important;
+    left: 0 !important;
+    background-color: black !important;
+    transition: transform 0.25s ease-out !important;
 }
+
+.tab button:hover:before {
+    transform: scale(1) !important;
+} */
 
 /* Style the tab content */
 .tabcontent {
     box-sizing: border-box;
     float: left;
-    padding: 0px 12px;
-    border: 1px solid #ccc;
-    width: 70%;
+    padding: 0px 14px;
+    margin: 0% 3%;
+    /* border: 1px solid #ccc; */
+    width: 64%;
     max-height: 80vh;
     overflow: auto;
+}
+
+.tabtext {
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 @media only screen and (max-width: 650px) {
