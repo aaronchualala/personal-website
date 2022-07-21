@@ -1,3 +1,63 @@
+.nav-opener {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 35px;
+    right: -0.1px;
+    display: none;
+    color: rgb(40, 40, 40);
+}
+
+.nav-side-bar {
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -0.1px;
+    background-color: rgba(211, 211, 211, 0.98);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+/* The navigation menu links */
+.nav-side-bar-item,
+.nav-side-bar .a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(154, 154, 154);
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.nav-side-bar a:hover {
+    color: #000000;
+}
+
+/* Position and style the close button (top right corner) */
+.nav-side-bar .close-btn {
+    position: absolute;
+    top: 44px;
+    right: 10px;
+    font-size: 45px;
+    color: gray;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .nav-side-bar {
+        padding-top: 15px;
+    }
+
+    .nav-side-bar a {
+        font-size: 18px;
+    }
+}
+
 .nav-container {
     display: table;
     width: 100%;
@@ -57,14 +117,12 @@
     background-color: black;
 }
 
-@media only screen and (max-width: 580px) {
-    .nav-link-image {
-        width: 30px;
-        transform: translateY(32px);
-
+@media only screen and (max-width: 650px) {
+    .nav-links {
+        display: none;
     }
 
-    .nav-link-text {
-        font-size: medium;
+    .nav-opener {
+        display: inline-block;
     }
 }

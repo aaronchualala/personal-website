@@ -20,7 +20,7 @@ const AboutPage = () => {
             <p class={intro}>I am a rising second-year student in the <a href="https://www.ntu.edu.sg/education/undergraduate-programme/renaissance-engineering-programme-(rep)">Renaissance Engineering Programme</a> at Nanyang Technological University. My goal is to understand, appreciate and improve complex systems so they can better serve the needs of their users and stewards. At present, I focus on using enterprise technologies to solve hard business problems.</p>
           </div>
           <div class={column + " " + image}>
-            <StaticImage
+            <StaticImage class={image}
               alt="Aaron Profile"
               src="../images/self-photo-circle.png"/>
           </div>

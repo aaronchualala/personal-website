@@ -39,14 +39,14 @@
 .icon-bar a {
     padding: 0px 10px;
     transition: all 0.3s ease;
-    color: #555;
+    color: rgb(102, 101, 101);
     font-size: 20px;
     position: relative;
     right: 8px;
 }
 
 .icon-bar a:hover {
-    background-color: #000;
+    color: #000;
     /* Add a hover color */
 }
 
@@ -61,9 +61,8 @@
 
 .image {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    transform: translateX(-25px);
+    transform: translateX(20px)
 }
 
 @media only screen and (max-width: 1050px) {
@@ -89,6 +88,6 @@
     }
 
     .image {
-        transform: translateX(-15px) translateY(-15px) scale(90%);
+        transform: scaleX(90%) scaleY(90%);
     }
 }

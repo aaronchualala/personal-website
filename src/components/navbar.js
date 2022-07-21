@@ -1,6 +1,10 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import {
+    navOpener,
+    navSideBar,
+    navSideBarItem,
+    closeBtn,
     navContainer,
     navLinks,
     navLinkImage,
@@ -11,19 +15,35 @@ import {
 import SelfPhoto from "../images/self-photo-circle.png"
 
 const Navbar = () => {
+  const [sideBar,setSideBar] = React.useState("none")
   const sections = ["Experience","Projects", "Skills", "Scribbles"]
-  const sectionElements = sections.map((section)=>
-    <li className={navLinkItem}>
-    <Link 
-      to={"/".concat(section.slice(section).toLowerCase())} 
-      className={navLinkText}
-      activeClassName={navLinkTextActive}
-      partiallyActive={true}>
-        {section}
-    </Link>
+  const sectionElements = (classItem, classLinkText, classLinkTextActive) => sections.map((section)=>
+    <li className={classItem}>
+      <Link 
+        to={"/".concat(section.slice(section).toLowerCase())} 
+        className={classLinkText}
+        activeClassName={classLinkTextActive}
+        partiallyActive={true}>
+          {section}
+      </Link>
     </li>
   )
   return (
+    <>
+
+    <span className={navOpener} onClick={()=>setSideBar("block")}>&#9776;</span>
+    <div className={navSideBar} style={{display:sideBar}}>
+      <a className={closeBtn} onClick={()=>setSideBar("none")}>&times;</a>
+      <ul style={{listStyle: "none"}}>
+        <li>
+            <Link to="/" className={navSideBarItem} partiallyActive={true}>
+                About
+            </Link>
+        </li>
+        {sectionElements("",navSideBarItem,"")}
+      </ul>
+    </div>
+
     <nav className={navContainer}>
       <Link to="/" className={navLinkImage}>
         <img 
@@ -41,9 +61,10 @@ const Navbar = () => {
               About
           </Link>
           </li>
-          {sectionElements}
+          {sectionElements(navLinkItem,navLinkText,navLinkTextActive)}
       </ul>
     </nav>
+    </>
   )
 }
 
