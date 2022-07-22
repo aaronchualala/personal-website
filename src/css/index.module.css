@@ -1,4 +1,5 @@
 .about-container {
+    padding-top: 40px;
     display: flex;
     min-height: 70vh;
     width: 100%;
