@@ -21,6 +21,7 @@ const ExperiencePage = ({ data }) => {
 
   return (
     <Layout pageTitle="Experience">
+      <div className={expContainer}>
         <h1>Experience</h1>
         <div className={tab}>
         {
@@ -48,26 +49,25 @@ const ExperiencePage = ({ data }) => {
         }
         </div>
 
-        <div className={contentWrapper}>
-          <GatsbyImage  
-            className={contentImage}
-            image={getImage(view.backgroundImage)}
-            alt={view.backgroundImage_alt}
-            imgStyle={{objectFit: `contain`}}
-            style={{position:"absolute", width:"70%"}}/>
-          <main className={contentAllText}>
-              <h2>{view.myJob}<a href={view.orgLink}>{view.orgName?" @"+view.orgName:""}</a></h2>
-              <h4>
-                {view.startDate?view.startDate+" – ":""}
-                {view.endDate?view.endDate:(view.startDate?"Present":"")}
-              </h4>
-              <div className={contentDescription}> 
-                  <MDXRenderer>
-                    {view.myImpact}
-                  </MDXRenderer>
-              </div>
-          </main>
-        </div>
+        <GatsbyImage  
+          className={contentImage}
+          image={getImage(view.backgroundImage)}
+          alt={view.backgroundImage_alt}
+          imgStyle={{objectFit: `contain`}}
+          style={{gridRow: 2, gridColumn: 2, position:"relative", top:'0px'}}/>
+        <main className={contentAllText}>
+            <h2>{view.myJob}<a href={view.orgLink}>{view.orgName?" @"+view.orgName:""}</a></h2>
+            <h4>
+              {view.startDate?view.startDate+" – ":""}
+              {view.endDate?view.endDate:(view.startDate?"Present":"")}
+            </h4>
+            <div className={contentDescription}> 
+                <MDXRenderer>
+                  {view.myImpact}
+                </MDXRenderer>
+            </div>
+        </main>
+      </div>
     </Layout>
   )
 }

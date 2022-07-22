@@ -74,10 +74,11 @@
 }
 
 .nav-side-bar {
+    display: none;
     height: 100%;
     width: 40vw;
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     top: 0;
     right: -0.1px;
     background-color: rgba(211, 211, 211, 0.96);
@@ -112,9 +113,9 @@
     }
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 650px) {
     .nav-side-bar {
-        padding-top: 15px;
+        padding-top: 50px;
     }
 
     .nav-link-text {

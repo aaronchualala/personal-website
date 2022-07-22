@@ -38,14 +38,14 @@ body {
 .container :is(h1) {
     font-weight: bold;
     font-family: "Title";
+    margin: 0px;
 }
 
 .section-container {
-    display: grid;
     position: relative;
+    display: grid;
     /* min-height acutally not needed here since alr specified in .container */
     min-height: 80vh;
-    background-color: aqua;
 }
 
 @media only screen and (max-width: 1400px) {
