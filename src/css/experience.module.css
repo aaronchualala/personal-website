@@ -25,7 +25,7 @@
     font-size: larger;
 }
 
-.activetab {
+.active-tab {
     background-color: #ddd !important;
     border-left: 4px solid #999 !important;
     padding: 22px 16px 22px 12px !important;
@@ -39,7 +39,7 @@
 
 /* Style the tab content */
 
-.tabwrapper {
+.tab-wrapper {
     display: block;
     box-sizing: border-box;
     width: 70%;
@@ -47,20 +47,21 @@
     overflow: auto;
 }
 
-.image {
-    position: absolute;
-    width: 70%;
+.tab-image {
+    /* have to use inline styles for position and width... :( */
+    /* position: absolute; */
+    /* width: 70%; */
     min-height: 50vh;
     opacity: 0.25;
-    transform: scale(0.9) translateY(100px);
+    transform: translateY(100px) scale(0.9);
 }
 
-.tabcontent {
+.tab-content {
     position: absolute;
     padding: 0px 14px;
 }
 
-.tabtext {
+.tab-text {
     text-align: justify;
     text-justify: inter-word;
     min-height: 50vh;

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
-import { expContainer,tab, tabcontent, activetab, tabtext, image,tabwrapper } from '../../css/experience.module.css'
+import {tab, tabContent, activeTab, tabText, tabImage, tabWrapper } from '../../css/experience.module.css'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const ExperiencePage = ({ data }) => {
@@ -27,7 +27,7 @@ const ExperiencePage = ({ data }) => {
             data.allMdx.nodes.map((node) => (
               <>
                 <button 
-                  className={node.id === activeE && activetab}
+                  className={node.id === activeE && activeTab}
                   key={node.id} 
                   onClick={() => {console.log(defaultExperience);setActiveE(node.id);setView(
                   {
@@ -49,19 +49,20 @@ const ExperiencePage = ({ data }) => {
         </div>
         
 
-        <div className={tabwrapper}>
+        <div className={tabWrapper}>
           <GatsbyImage  
-            className={image}
+            className={tabImage}
             image={getImage(view.backgroundImage)}
             alt={view.backgroundImage_alt}
-            imgStyle={{objectFit: `contain`}}/>
-          <main className={tabcontent}>
+            imgStyle={{objectFit: `contain`}}
+            style={{position:"absolute", width:"70%"}}/>
+          <main className={tabContent}>
               <h2>{view.myJob}<a href={view.orgLink}>{view.orgName?" @"+view.orgName:""}</a></h2>
               <h4>
                 {view.startDate?view.startDate+" – ":""}
                 {view.endDate?view.endDate:(view.startDate?"Present":"")}
               </h4>
-              <div className={tabtext}> 
+              <div className={tabText}> 
                   <MDXRenderer>
                     {view.myImpact}
                   </MDXRenderer>
