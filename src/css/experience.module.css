@@ -69,11 +69,11 @@
 }
 
 @media only screen and (max-width: 650px) {
-    .tab button {
-        font-size: small;
+    .tab-wrapper .tab-image .tab-text {
+        height: auto
     }
 
-    .tabtext {
-        max-height: 58vh;
+    .tab button {
+        font-size: small;
     }
 }
