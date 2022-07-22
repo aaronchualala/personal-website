@@ -21,7 +21,6 @@ const ExperiencePage = ({ data }) => {
 
   return (
     <Layout pageTitle="Experience">
-      <div className={expContainer}>
         <h1>Experience</h1>
         <div className={tab}>
         {
@@ -69,7 +68,6 @@ const ExperiencePage = ({ data }) => {
               </div>
           </main>
         </div>
-      </div>
     </Layout>
   )
 }

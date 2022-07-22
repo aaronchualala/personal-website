@@ -10,7 +10,7 @@ import {
     navLinkItem,
     navLinkText,
     navLinkTextActive
-  } from '../css/navbar.module.css'
+  } from '../css/components/navbar.module.css'
 import SelfPhoto from "../images/self-photo-circle.png"
 
 const Navbar = () => {

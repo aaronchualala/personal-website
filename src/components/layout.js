@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import {container, sectionContainer} from '../css/layout.module.css'
+import {container, sectionContainer} from '../css/components/layout.module.css'
 import Navbar from './navbar'
 import Footer from './footer'
 

@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Body";
-    src: url("./fonts/Metropolis-Thin 400.otf");
+    src: url("../fonts/Metropolis-Thin 400.otf");
 }
 
 @font-face {
     font-family: "Navbar";
-    src: url("./fonts/EB Garamond Regular 400.ttf");
+    src: url("../fonts/EB Garamond Regular 400.ttf");
 }
 
 @font-face {
     font-family: "Title";
-    src: url("./fonts/EB Garamond Bold 700.ttf");
+    src: url("../fonts/EB Garamond Bold 700.ttf");
     font-weight: bold;
 }
 
@@ -45,7 +45,7 @@ body {
     position: relative;
     /* min-height acutally not needed here since alr specified in .container */
     min-height: 80vh;
-    /* background-color: aqua; */
+    background-color: aqua;
 }
 
 @media only screen and (max-width: 1400px) {
