@@ -69,7 +69,8 @@
     }
 
     .name {
-        font-size: 8vw;
+        margin-top: 0px;
+        font-size: 6vw;
     }
 
     .byline {
@@ -86,7 +87,8 @@
     }
 
     .intro {
-        margin-bottom: 0px;
+        margin: 30px 5vw 0px;
+        text-align: center;
     }
 
     .image {
