@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import {
+    navContainer,
     navOpener,
     navSideBar,
     navSideBarItem,
     closeBtn,
-    navContainer,
     navLinks,
-    navLinkImage,
+    navImage,
     navLinkItem,
     navLinkText,
     navLinkTextActive
@@ -16,55 +16,46 @@ import SelfPhoto from "../images/self-photo-circle.png"
 
 const Navbar = () => {
   const [sideBar,setSideBar] = React.useState("none")
-  const sections = ["Experience","Projects", "Skills", "Scribbles"]
-  const sectionElements = (classItem, classLinkText, classLinkTextActive) => sections.map((section)=>
-    <li className={classItem}>
+  const sections = ["","Experience","Projects", "Skills", "Scribbles"]
+
+  const navLinkItems = (__LinkItem, __LinkText, __LinkTextActive) => sections.map((section)=>
+    <li className={__LinkItem}>
       <Link 
         to={"/".concat(section.slice(section).toLowerCase())} 
-        className={classLinkText}
-        activeClassName={classLinkTextActive}
-        partiallyActive={true}>
-          {section}
+        className={__LinkText}
+        activeClassName={__LinkTextActive}
+        partiallyActive={section?true:false}>
+          {section?section:"About"}
       </Link>
     </li>
   )
+
   return (
-    <>
-
-    <span className={navOpener} onClick={()=>setSideBar("block")} aria-hidden="true" >&#9776;</span>
-    <div className={navSideBar} style={{display:sideBar}}>
-      <button className={closeBtn} onClick={()=>setSideBar("none")} aria-hidden="true" >&times;</button>
-      <ul style={{listStyle: "none"}}>
-        <li>
-            <Link to="/" className={navSideBarItem} partiallyActive={true}>
-                About
-            </Link>
-        </li>
-        {sectionElements("",navSideBarItem,"")}
-      </ul>
-    </div>
-
     <nav className={navContainer}>
-      <Link to="/" className={navLinkImage}>
+
+      <Link to="/">
         <img 
           alt="Aaron Profile"
           src={SelfPhoto}
-          style={{maxWidth: "100%"}}
+          className={navImage}
         />
       </Link>
+
       <ul className={navLinks}>
-          <li className={navLinkItem}>
-          <Link 
-              to="/" 
-              className={navLinkText}
-              activeClassName={navLinkTextActive}>
-              About
-          </Link>
-          </li>
-          {sectionElements(navLinkItem,navLinkText,navLinkTextActive)}
+          {navLinkItems(navLinkItem,navLinkText,navLinkTextActive)}
       </ul>
+      
+      <div className={navOpener} onClick={()=>setSideBar("block")} aria-hidden="true" >&#9776;</div>
+      
+      <div className={navSideBar} style={{display:sideBar}}>
+        <button className={closeBtn} onClick={()=>setSideBar("none")} aria-hidden="true" >&times;</button>
+        <ul style={{listStyle: "none"}}>
+          {navLinkItems(navLinkItem,navLinkText,navLinkTextActive)}
+        </ul>
+      </div>
+
+
     </nav>
-    </>
   )
 }
 

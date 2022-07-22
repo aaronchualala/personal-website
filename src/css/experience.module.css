@@ -1,14 +1,15 @@
+.exp-container {
+    height: 100%;
+    overflow: auto;
+    height: 94vh;
+}
+
 /* Style the tab */
 .tab {
     box-sizing: border-box;
     float: left;
-    /* border-right: 1px solid #ccc; */
-    /* background-color: #f1f1f1; */
-    justify-content: right;
     width: 30%;
-    min-height: 50vh;
-    max-height: 70px;
-    overflow: auto;
+    justify-content: right;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -39,15 +40,14 @@
 
 /* Style the tab content */
 
-.tab-wrapper {
+.content-wrapper {
+    width: 70%;
     display: block;
     box-sizing: border-box;
-    width: 70%;
-    min-height: 50vh;
     overflow: auto;
 }
 
-.tab-image {
+.content-image {
     /* have to use inline styles for position and width... :( */
     /* position: absolute; */
     /* width: 70%; */
@@ -56,12 +56,13 @@
     transform: translateY(100px) scale(0.9);
 }
 
-.tab-content {
+.content-all-text {
     position: absolute;
     padding: 0px 14px;
+    overflow: auto;
 }
 
-.tab-text {
+.content-description {
     text-align: justify;
     text-justify: inter-word;
     min-height: 50vh;
@@ -69,11 +70,16 @@
 }
 
 @media only screen and (max-width: 650px) {
-    .tab-wrapper .tab-image .tab-text {
-        height: auto
-    }
 
     .tab button {
         font-size: small;
+    }
+
+    .content-image {
+        min-height: 20vh;
+    }
+
+    .content-description {
+        min-height: 20vh;
     }
 }

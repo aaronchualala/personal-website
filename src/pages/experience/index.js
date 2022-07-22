@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
-import {tab, tabContent, activeTab, tabText, tabImage, tabWrapper } from '../../css/experience.module.css'
+import {expContainer, tab, activeTab, contentAllText, contentDescription, contentImage, contentWrapper } from '../../css/experience.module.css'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const ExperiencePage = ({ data }) => {
@@ -21,6 +21,7 @@ const ExperiencePage = ({ data }) => {
 
   return (
     <Layout pageTitle="Experience">
+      <div className={expContainer}>
         <h1>Experience</h1>
         <div className={tab}>
         {
@@ -47,28 +48,28 @@ const ExperiencePage = ({ data }) => {
             )
         }
         </div>
-        
 
-        <div className={tabWrapper}>
+        <div className={contentWrapper}>
           <GatsbyImage  
-            className={tabImage}
+            className={contentImage}
             image={getImage(view.backgroundImage)}
             alt={view.backgroundImage_alt}
             imgStyle={{objectFit: `contain`}}
             style={{position:"absolute", width:"70%"}}/>
-          <main className={tabContent}>
+          <main className={contentAllText}>
               <h2>{view.myJob}<a href={view.orgLink}>{view.orgName?" @"+view.orgName:""}</a></h2>
               <h4>
                 {view.startDate?view.startDate+" – ":""}
                 {view.endDate?view.endDate:(view.startDate?"Present":"")}
               </h4>
-              <div className={tabText}> 
+              <div className={contentDescription}> 
                   <MDXRenderer>
                     {view.myImpact}
                   </MDXRenderer>
               </div>
           </main>
         </div>
+      </div>
     </Layout>
   )
 }
