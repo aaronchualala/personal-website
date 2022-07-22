@@ -4,7 +4,6 @@ import {
     navContainer,
     navOpener,
     navSideBar,
-    navSideBarItem,
     closeBtn,
     navLinks,
     navImage,

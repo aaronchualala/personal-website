@@ -41,8 +41,11 @@ body {
 }
 
 .section-container {
+    display: grid;
+    position: relative;
     /* min-height acutally not needed here since alr specified in .container */
     min-height: 80vh;
+    /* background-color: aqua; */
 }
 
 @media only screen and (max-width: 1400px) {
@@ -50,7 +53,6 @@ body {
         max-width: 1000px;
     }
 }
-
 
 /* to leave a fixed margin after a fixed small views  */
 @media only screen and (max-width: 1050px) {
