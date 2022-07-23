@@ -41,6 +41,7 @@ query {
       frontmatter {
         endDate(formatString: "MMMM D, YYYY")
         projTitle
+        backgroundImage_alt
         backgroundImage {
           childImageSharp {
             gatsbyImageData

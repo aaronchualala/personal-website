@@ -11,6 +11,30 @@
     grid-column: 1 / 3;
 }
 
+/* ————————————————————————— */
+
+.project-container {
+    display: grid;
+    padding: 0px, 2vw;
+    justify-items: center;
+
+}
+
+.project-container p {
+    text-align: justify;
+    text-justify: inter-word;
+    width: 60vw
+}
+
+.project-container div {
+    padding: 0.5vh
+}
+
+/* .project-header {
+    border: 1px solid 60vw;
+} */
+
+/* ————————————————————————— */
 .project-wrapper {
     display: grid;
     grid: 1fr 60px 30px 1fr/ 1fr;

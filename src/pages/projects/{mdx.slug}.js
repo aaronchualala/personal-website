@@ -5,9 +5,11 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 // import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import kebabCase from "lodash/kebabCase"
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import {projectContainer, projectHeader} from '../../css/projects.module.css'
 
 const ProjectPage = ({data}) => {
-  // const image = getImage(data.mdx.frontmatter.backgroundImage)
+  const image = getImage(data.mdx.frontmatter.backgroundImage)
   const skills = data.mdx.frontmatter.skills?data.mdx.frontmatter.skills.map((skill)=>
     <span>
       <Link to={"/skills/"+kebabCase(skill)}>
@@ -18,19 +20,31 @@ const ProjectPage = ({data}) => {
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.projTitle}>
-      <h1>{data.mdx.frontmatter.projTitle}</h1>
-      <p>Posted: {data.mdx.frontmatter.startDate}</p>
-      <div>
-        <span>Skills: </span>
-        {skills}
+      <div className={projectContainer}>
+          <h1>{data.mdx.frontmatter.projTitle}</h1>
+          <div>______________</div>
+          <div></div>
+          <div>Timeline: {data.mdx.frontmatter.startDate} — {data.mdx.frontmatter.endDate}</div>
+          <div>
+            <span>Skills: </span>
+            {skills}
+          </div>
+        <div>______________</div>
+        <br></br>
+        <div>
+          <GatsbyImage
+          image={image}
+          alt={data.mdx.frontmatter.backgroundImage_alt}
+          imgStyle={{objectFit: `contain`}}
+          style={{width:"60vw", orderRadius:"3%"}}
+          />
+        </div>
+        <p>
+          <MDXRenderer>
+            {data.mdx.body}
+          </MDXRenderer>
+        </p>
       </div>
-      {/* <GatsbyImage
-      image={image}
-      alt={data.mdx.frontmatter.backgroundImage_alt}
-      /> */}
-      <MDXRenderer>
-        {data.mdx.body}
-      </MDXRenderer>
     </Layout>
   )
 }
@@ -41,9 +55,15 @@ query($id: String) {
     body
     frontmatter {
       projTitle
-      startDate(formatString: "MMMM DD, YYYY")
-      endDate(formatString: "MMMM DD, YYYY")
+      startDate(formatString: "MMMM YYYY")
+      endDate(formatString: "MMMM YYYY")
       skills
+      backgroundImage_alt
+      backgroundImage {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
     }
   }
 }
