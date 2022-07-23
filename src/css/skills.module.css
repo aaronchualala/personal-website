@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "BodyBold";
+    src: url("./fonts/Metropolis-SemiBold 600.otf");
+}
+
 .section-container {
     display: grid;
     grid: 60px / 1fr 1fr 1fr;
@@ -9,6 +14,40 @@
     grid-column: 1 / 4;
 }
 
+/* ————————————————————————— */
+
+.skill-container {
+    display: grid;
+    padding: 0px 2vw;
+    justify-items: center;
+    margin-bottom: auto;
+    width: 90%;
+}
+
+.skill-byline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vh;
+}
+
+.skill-container a {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 3vh;
+}
+
+.skill-container div {
+    padding: 0.5vh
+}
+
+.see-other {
+    font-family: "BodyBold";
+    color: black;
+}
+
+/* ————————————————————————— */
 .skill-box {
     color: rgb(170, 170, 170);
     padding: 2vh 2vw;
@@ -16,18 +55,19 @@
     padding-top: 3vh;
     padding-bottom: 3vh;
     cursor: pointer;
-    transition: all 1.8s;
-    font-size: 2.4vh;
+    transition: all 1s;
+    font-size: 3vh;
     text-align: center;
 }
 
 .skill-box:hover {
     color: black;
     font-size: 3vh;
+    font-family: "BodyBold";
     background-color: lightgray;
-    border-left: 4px black solid;
-    border-right: 4px black solid;
-    transition: all 0.2s;
+    border-left: 6px black solid;
+    border-right: 6px black solid;
+    transition: all 0.1s;
 }
 
 .skill-name {
@@ -45,10 +85,10 @@
     }
 
     .skill-box {
-        font-size: 2vh;
+        font-size: 2.4vh;
     }
 
     .skill-box:hover {
-        font-size: 2.4vh;
+        font-size: 3vh;
     }
 }

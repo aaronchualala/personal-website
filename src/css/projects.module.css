@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "BodyBold";
+    src: url("./fonts/Metropolis-SemiBold 600.otf");
+}
+
 .projects-container {
     display: grid;
     grid: 60px 1fr / 1fr 1fr;
@@ -16,7 +21,7 @@
 
 .project-container {
     display: grid;
-    padding: 0px, 2vw;
+    padding: 0px 2vw;
     justify-items: center;
     margin: auto;
     width: 90%;
@@ -43,16 +48,16 @@
     width: 90%;
     max-width: 500px;
     z-index: 2;
-    color: black
+    transition: all 2s;
 }
 
 .content-image {
     height: inherit;
     width: inherit;
-    opacity: 0.5;
-    -moz-opacity: 0.5;
-    -webkit-opacity: 0.5;
-    filter: alpha(opacity=50);
+    opacity: 0.35;
+    -moz-opacity: 0.35;
+    -webkit-opacity: 0.35;
+    filter: alpha(opacity=35);
     z-index: 1;
     border-radius: 3%;
 }
@@ -60,31 +65,33 @@
 .project-title {
     padding: 1vw;
     font-size: 4vh;
-    text-align: center
+    text-align: center;
+    color: black
 }
 
-.project-date {
+.project-info {
     padding: 1vw;
-    font-size: 2.5vh;
+    font-size: 3vh;
     text-align: center;
+    color: black
 }
 
 .project-wrapper:hover .content-image {
-    opacity: 0.7;
-    -webkit-opacity: 0.7;
-    -moz-opacity: 0.7;
-    -webkit-opacity: 0.7;
-    filter: alpha(opacity=70);
+    opacity: 0.45;
+    -webkit-opacity: 0.45;
+    -moz-opacity: 0.45;
+    -webkit-opacity: 0.45;
+    filter: alpha(opacity=45);
 }
 
 .project-wrapper:hover .project-title {
-    font-size: 4.5vh;
     z-index: 5;
+    font-family: "BodyBold";
 }
 
 .project-wrapper:hover .project-date {
-    font-size: 2.73vh;
     z-index: 5;
+    font-family: "BodyBold";
 }
 
 @media only screen and (max-width: 650px) {
@@ -93,8 +100,7 @@
         justify-self: center;
     }
 
-
     .projects-container {
-        grid: 60px 1fr / 1fr
+        grid: 60px 1fr / 1fr;
     }
 }

@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: "BodyBold";
+    src: url("../fonts/Metropolis-SemiBold 600.otf");
+}
+
+@font-face {
     font-family: "Navbar";
     src: url("../fonts/EB Garamond Regular 400.ttf");
 }
@@ -17,6 +22,12 @@
 * {
     text-decoration: none;
     font-family: "Body";
+}
+
+a {
+    color: rgb(231, 146, 161);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 body {

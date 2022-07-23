@@ -36,9 +36,9 @@
 }
 
 .icon-bar a {
+    color: gray;
     padding: 0px 10px;
     transition: all 0.3s ease;
-    color: rgb(102, 101, 101);
     font-size: 20px;
     position: relative;
     right: 8px;
