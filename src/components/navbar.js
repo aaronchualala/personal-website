@@ -15,7 +15,7 @@ import SelfPhoto from "../images/self-photo-circle.png"
 
 const Navbar = () => {
   const [sideBar,setSideBar] = React.useState("none")
-  const sections = ["","Experience","Projects", "Skills", "Scribbles"]
+  const sections = ["","Experience","Projects", "Skills"]
 
   const navLinkItems = (__LinkItem, __LinkText, __LinkTextActive) => sections.map((section)=>
     <li className={__LinkItem}>
@@ -52,8 +52,6 @@ const Navbar = () => {
           {navLinkItems(navLinkItem,navLinkText,navLinkTextActive)}
         </ul>
       </div>
-
-
     </nav>
   )
 }

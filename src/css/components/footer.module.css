@@ -5,3 +5,9 @@
     width: 100%;
     font-size: smaller;
 }
+
+@media only screen and (max-width: 1050px) {
+    .footer-text {
+        text-align: center;
+    }
+}

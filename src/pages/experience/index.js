@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
-import {expContainer, tab, activeTab, contentAllText, contentDescription, contentImage, contentWrapper } from '../../css/experience.module.css'
+import {expContainer, tab, activeTab, contentAllText, contentDescription, contentImage } from '../../css/experience.module.css'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const ExperiencePage = ({ data }) => {
