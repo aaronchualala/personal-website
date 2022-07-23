@@ -2,25 +2,24 @@ import React from "react"
 import kebabCase from "lodash/kebabCase"
 import { Link, graphql } from "gatsby"
 import Layout from '../../components/layout'
-import {skillsContainer} from '../../css/skills.module.css'
+import {sectionContainer, sectionHeader, skillBox, skillName} from '../../css/skills.module.css'
 
 const SkillsPage = ({data}) => {
   return (
-    <Layout pageTitle="Scribbles">
-      <h1>Skills</h1>
-      <main className={skillsContainer}>
-      {
-        data.allMdx.group.map((skill) => (
-          <div key={skill.fieldValue}>
-            <h2>
-              <Link to={`/skills/${kebabCase(skill.fieldValue)}/`}>
-                {skill.fieldValue} ({skill.totalCount})
-              </Link>
-            </h2>
+    <Layout pageTitle="Skills">
+      <div className={sectionContainer}>
+        <h1 className={sectionHeader}>Skills</h1>
+        {
+          data.allMdx.group.map((skill) => (
+          <div className={skillBox} key={skill.fieldValue}>
+            <Link className={skillName} to={`/skills/${kebabCase(skill.fieldValue)}/`}>
+              {skill.fieldValue} ({skill.totalCount})
+            </Link>
           </div>
-        ))
-      } 
-      </main>
+          ))
+        } 
+      </div>
+    
     </Layout>
   )
 }

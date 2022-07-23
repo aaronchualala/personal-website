@@ -6,7 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
 import kebabCase from "lodash/kebabCase"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import {projectContainer, projectHeader} from '../../css/projects.module.css'
+import {projectContainer} from '../../css/projects.module.css'
 
 const ProjectPage = ({data}) => {
   const image = getImage(data.mdx.frontmatter.backgroundImage)
@@ -24,11 +24,11 @@ const ProjectPage = ({data}) => {
           <h1>{data.mdx.frontmatter.projTitle}</h1>
           <div>______________</div>
           <div></div>
-          <div>Timeline: {data.mdx.frontmatter.startDate} — {data.mdx.frontmatter.endDate}</div>
-          <div>
-            <span>Skills: </span>
-            {skills}
-          </div>
+          <div>Timeline:</div>
+          <div>{data.mdx.frontmatter.startDate} — {data.mdx.frontmatter.endDate}</div>
+          <br></br>
+          <div>Skills: </div>
+          <div style={{textAlign: "center"}}>{skills}</div>
         <div>______________</div>
         <br></br>
         <div>
@@ -36,7 +36,7 @@ const ProjectPage = ({data}) => {
           image={image}
           alt={data.mdx.frontmatter.backgroundImage_alt}
           imgStyle={{objectFit: `contain`}}
-          style={{width:"60vw", orderRadius:"3%"}}
+          style={{width:"100%", orderRadius:"3%"}}
           />
         </div>
         <p>

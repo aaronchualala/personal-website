@@ -1,6 +1,6 @@
 .exp-container {
     display: grid;
-    grid: 50px 1fr / 3fr 7fr
+    grid: 60px 1fr / 3fr 7fr
 }
 
 /* Style the tab */
@@ -62,5 +62,8 @@
         font-size: small;
     }
 
-    .content-image {}
+    .exp-container h1 {
+        justify-self: center;
+        grid-column: 1 / 3;
+    }
 }
