@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "BodyBold";
+    src: url("./fonts/Metropolis-SemiBold 600.otf");
+}
+
 .exp-container {
     display: grid;
     grid: 60px 1fr / 3fr 7fr
@@ -60,13 +65,16 @@
 .content-all-text :is(h2, a) {
     font-size: 4vh;
     margin-top: 2vh;
-    padding: 0px;
-}
 
+}
 
 .content-description {
     text-align: justify;
     text-justify: inter-word;
+}
+
+.related-project-text {
+    font-family: "BodyBold";
 }
 
 @media only screen and (max-width: 650px) {

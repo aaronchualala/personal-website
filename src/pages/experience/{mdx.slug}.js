@@ -2,17 +2,20 @@ import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../../components/layout'
-import {expContainer, tab, activeTab, contentAllText, contentDescription, contentImage } from '../../css/experience.module.css'
+import {expContainer, tab, activeTab, contentAllText, contentDescription, contentImage, relatedProjectText } from '../../css/experience.module.css'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const ExperiencePage = ({ data }) => {
+  const checkExp = (node) => {return !node.fileAbsolutePath.includes('project-')}
+  const checkProj = (node) => {return data.mdx.frontmatter.projects.includes(node.slug)}
+
   return (
     <Layout pageTitle="Experience">
       <div className={expContainer}>
         <h1>Experience</h1>
         <div className={tab}>
         {
-            data.allMdx.nodes.map((node) => (
+            data.allMdx.nodes.filter(checkExp).map((node) => (
                 <Link to={`/experience/${node.slug}`} key={node.id}>
                   <button className={node.id === data.mdx.id && activeTab}>
                       {node.frontmatter.tabTitle}
@@ -40,6 +43,21 @@ const ExperiencePage = ({ data }) => {
                   {data.mdx.body}
                 </MDXRenderer>
             </div>
+
+            <div>
+              <div className={relatedProjectText}>
+              {data.allMdx.nodes.filter(checkProj).length > 1?"Related Projects: ":(data.allMdx.nodes.filter(checkProj).length===1?"Related Project: ":"")}
+              </div>
+              {data.allMdx.nodes.filter(checkProj).map((node, index, array) => (
+                <>
+                  <Link to={`/projects/${node.slug}`} style={{fontSize:"3vh"}}>
+                    {node.frontmatter.projTitle}
+                  </Link>
+                  <span>{index+1!==array.length?" / ":""}</span>
+                </>
+              ))}
+            </div>
+
         </main>
       </div>
     </Layout>
@@ -61,19 +79,21 @@ query ($id: String) {
           gatsbyImageData
         }
       }
+      projects
     }
     id
     body
   }
   allMdx(
-    sort: {fields: frontmatter___endDate, order: DESC}
-    filter: {fileAbsolutePath: {regex: "/experience/"}}) {
+    sort: {fields: frontmatter___endDate, order: DESC}) {
     nodes {
       frontmatter {
         tabTitle
+        projTitle
       }
       id
       slug
+      fileAbsolutePath
     }
   }
 }

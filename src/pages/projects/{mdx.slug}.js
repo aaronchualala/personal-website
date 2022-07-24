@@ -5,17 +5,20 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 // import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import kebabCase from "lodash/kebabCase"
+import startCase from "lodash/startCase"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import {projectContainer, projectInfo} from '../../css/projects.module.css'
 
 const ProjectPage = ({data}) => {
+  const checkExp = (node) => {return data.mdx.frontmatter.experience[0].toLowerCase() === node.slug.toLowerCase()}
   const image = getImage(data.mdx.frontmatter.backgroundImage)
-  const skills = data.mdx.frontmatter.skills?data.mdx.frontmatter.skills.map((skill)=>
-    <span>
+  const skills = data.mdx.frontmatter.skills?data.mdx.frontmatter.skills.map((skill, index, array)=>
+    <>
       <Link to={"/skills/"+kebabCase(skill)}>
-          #{kebabCase(skill)} {" "} 
+          {startCase(skill.toLowerCase())}
       </Link>
-    </span>
+      {index+1!==array.length?(<br></br>):""}
+    </>
   ):""
 
   return (
@@ -24,8 +27,10 @@ const ProjectPage = ({data}) => {
           <h1>{data.mdx.frontmatter.projTitle}</h1>
           <div>______________</div>
           <div></div>
-          <div className={projectInfo}>Timeline:</div>
-          <div className={projectInfo}>{data.mdx.frontmatter.startDate} — {data.mdx.frontmatter.endDate}</div>
+          <div className={projectInfo}>Experience:</div>
+          <div className={projectInfo}>{data.allMdx.nodes.filter(checkExp).map((node)=>(
+            <Link to={`/experience/${node.slug}`}>{node.frontmatter.tabTitle}</Link>))}
+          </div>
           <br></br>
           <div className={projectInfo}>Skills: </div>
           <div className={projectInfo} style={{textAlign: "center", maxWidth:"20vw"}} >{skills}</div>
@@ -57,6 +62,7 @@ query($id: String) {
       projTitle
       startDate(formatString: "MMMM YYYY")
       endDate(formatString: "MMMM YYYY")
+      experience
       skills
       backgroundImage_alt
       backgroundImage {
@@ -64,6 +70,17 @@ query($id: String) {
           gatsbyImageData
         }
       }
+    }
+  }
+  allMdx(
+    sort: {fields: frontmatter___endDate, order: DESC}
+    filter: {fileAbsolutePath: {regex: "/experience/"}}) {
+    nodes {
+      frontmatter{
+        tabTitle
+      }
+      id
+      slug
     }
   }
 }
