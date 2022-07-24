@@ -20,7 +20,7 @@
     outline: none;
     text-align: left;
     cursor: pointer;
-    font-size: larger;
+    font-size: large;
 }
 
 .active-tab {
@@ -51,6 +51,18 @@
     padding: 0px 14px;
     z-index: 2;
 }
+
+.content-all-text h3 {
+    font-size: 3.2vh
+}
+
+
+.content-all-text :is(h2, a) {
+    font-size: 4vh;
+    margin-top: 2vh;
+    padding: 0px;
+}
+
 
 .content-description {
     text-align: justify;
