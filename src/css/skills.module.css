@@ -52,17 +52,17 @@
     color: rgb(170, 170, 170);
     padding: 2vh 2vw;
     margin: 0px;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
+    padding: 3vh 3vw;
     cursor: pointer;
     transition: all 1s;
-    font-size: 2.3vh;
+    font-size: 2.5vh;
     text-align: center;
 }
 
 .skill-box:hover {
     color: black;
-    font-size: 2.6vh;
+    padding: 3vh 0.5vw;
+    font-size: 2.8vh;
     font-family: "BodyBold";
     background-color: lightgray;
     border-left: 6px black solid;

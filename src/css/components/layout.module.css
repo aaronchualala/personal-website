@@ -48,7 +48,6 @@ body {
 }
 
 .container :is(h1) {
-    font-weight: bold;
     font-family: "Title";
     margin: 0px;
     font-size: 5vh;

@@ -39,7 +39,7 @@ query {
     filter: {fileAbsolutePath: {regex: "/projects/"}}) {
     nodes {
       frontmatter {
-        endDate(formatString: "MMMM D, YYYY")
+        endDate(formatString: "MMMM YYYY")
         projTitle
         backgroundImage_alt
         backgroundImage {

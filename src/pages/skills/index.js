@@ -1,5 +1,6 @@
 import React from "react"
 import kebabCase from "lodash/kebabCase"
+import startCase from 'lodash/startCase'
 import { Link, graphql } from "gatsby"
 import Layout from '../../components/layout'
 import {sectionContainer, sectionHeader, skillBox, skillName} from '../../css/skills.module.css'
@@ -13,7 +14,7 @@ const SkillsPage = ({data}) => {
           data.allMdx.group.map((skill) => (
           <Link className={skillName} to={`/skills/${kebabCase(skill.fieldValue)}/`}>
             <div className={skillBox} key={skill.fieldValue}>
-                {skill.fieldValue} ({skill.totalCount})
+                {startCase(skill.fieldValue.toLowerCase())} ({skill.totalCount})
             </div>
           </Link>
           ))

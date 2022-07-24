@@ -7,7 +7,7 @@ import Layout from '../../components/layout'
 import kebabCase from "lodash/kebabCase"
 import startCase from "lodash/startCase"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import {projectContainer, projectInfo} from '../../css/projects.module.css'
+import {projectContainer, projectInfo, mdxContent} from '../../css/projects.module.css'
 
 const ProjectPage = ({data}) => {
   const checkExp = (node) => {return data.mdx.frontmatter.experience[0].toLowerCase() === node.slug.toLowerCase()}
@@ -33,7 +33,7 @@ const ProjectPage = ({data}) => {
           </div>
           <br></br>
           <div className={projectInfo}>Skills: </div>
-          <div className={projectInfo} style={{textAlign: "center", maxWidth:"20vw"}} >{skills}</div>
+          <div className={projectInfo} style={{textAlign: "center", maxWidth:"80vw"}} >{skills}</div>
         <div>______________</div>
         <br></br>
         <div>
@@ -44,11 +44,11 @@ const ProjectPage = ({data}) => {
           style={{width:"100%", orderRadius:"3%"}}
           />
         </div>
-        <p>
+        <div className={mdxContent}>
           <MDXRenderer>
             {data.mdx.body}
           </MDXRenderer>
-        </p>
+        </div>
       </div>
     </Layout>
   )

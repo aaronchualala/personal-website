@@ -45,9 +45,9 @@ const ExperiencePage = ({ data }) => {
             </div>
 
             <div>
-              <div className={relatedProjectText}>
-              {data.allMdx.nodes.filter(checkProj).length > 1?"Related Projects: ":(data.allMdx.nodes.filter(checkProj).length===1?"Related Project: ":"")}
-              </div>
+              <h4 className={relatedProjectText}>
+              {data.allMdx.nodes.filter(checkProj).length > 1?"Related Projects ":(data.allMdx.nodes.filter(checkProj).length===1?"Related Project ":"")}
+              </h4>
               {data.allMdx.nodes.filter(checkProj).map((node, index, array) => (
                 <>
                   <Link to={`/projects/${node.slug}`} style={{fontSize:"3vh"}}>

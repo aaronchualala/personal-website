@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from '../../components/layout'
+import startCase from 'lodash/startCase'
 import {skillContainer, skillByline, seeOther} from '../../css/skills.module.css'
 
 
@@ -12,7 +13,7 @@ const Skills = ({ pageContext, data }) => {
   return (
     <Layout pageTitle="Skills">
       <div className={skillContainer}>
-        <h1>{skillHeader} </h1>
+        <h1>{startCase(skillHeader.toLowerCase())} </h1>
         <div>______________</div>
         <div></div>
         <div className={skillByline}>{totalCount} project{totalCount===1 ? "" : "s"}:
