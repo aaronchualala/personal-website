@@ -7,7 +7,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const ExperiencePage = ({ data }) => {
   const checkExp = (node) => {return !node.fileAbsolutePath.includes('project-')}
-  const checkProj = (node) => {return data.mdx.frontmatter.projects.includes(node.slug)}
+  const checkProj = (node) => {return data.mdx.frontmatter.projects?data.mdx.frontmatter.projects.includes(node.slug):""}
 
   return (
     <Layout pageTitle="Experience">

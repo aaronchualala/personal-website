@@ -10,7 +10,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import {projectContainer, projectInfo, mdxContent} from '../../css/projects.module.css'
 
 const ProjectPage = ({data}) => {
-  const checkExp = (node) => {return data.mdx.frontmatter.experience[0].toLowerCase() === node.slug.toLowerCase()}
+  const checkExp = (node) => {return data.mdx.frontmatter.experience?data.mdx.frontmatter.experience[0].toLowerCase() === node.slug.toLowerCase():""}
   const image = getImage(data.mdx.frontmatter.backgroundImage)
   const skills = data.mdx.frontmatter.skills?data.mdx.frontmatter.skills.map((skill, index, array)=>
     <>

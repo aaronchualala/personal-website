@@ -8,7 +8,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 const ExperiencePage = ({ data }) => {
   const defaultExperience = data.allMdx.nodes[0]
   const checkExp = (node) => {return !node.fileAbsolutePath.includes('project-')}
-  const checkProj = (node) => {return defaultExperience.frontmatter.projects.includes(node.slug)}
+  const checkProj = (node) => {return defaultExperience.frontmatter.projects?defaultExperience.frontmatter.projects.includes(node.slug):""}
   
   return (
     <Layout pageTitle="Experience">
