@@ -13,18 +13,18 @@ import {
   } from '../css/components/navbar.module.css'
 import SelfPhoto from "../images/self-photo-circle.png"
 
-const Navbar = () => {
+const Navbar = ({data}) => {
   const [sideBar,setSideBar] = React.useState("none")
   const sections = ["","Experience","Projects", "Skills"]
 
   const navLinkItems = (__LinkItem, __LinkText, __LinkTextActive) => sections.map((section)=>
     <li className={__LinkItem}>
       <Link 
-        to={"/".concat(section.slice(section).toLowerCase())} 
+        to={"/".concat(section.slice(section).toLowerCase()).concat(section==="Experience"?"/accenture":"")} 
         className={__LinkText}
         activeClassName={__LinkTextActive}
         partiallyActive={section?true:false}>
-          {section?section:"About"}
+        {section?section:"About"}
       </Link>
     </li>
   )
@@ -55,5 +55,18 @@ const Navbar = () => {
     </nav>
   )
 }
+
+// GRAPHQL DOESN'T WORK IN COMPONENTS APPARENTLY. SO I WILL JUST HARDCODE THE NAVBAR LINK FOR EXPERIENCE
+// export const query = graphql`
+// query {
+//   allMdx(
+//     sort: {fields: frontmatter___endDate, order: DESC}
+//     filter: {fileAbsolutePath: {regex: "/experience/"}}) {
+//     nodes {
+//       slug
+//     }
+//   }
+// }
+// `
 
 export default Navbar

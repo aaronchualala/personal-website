@@ -24,13 +24,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: `scribbles`,
-        path: `${__dirname}/data/scribbles`,
-      }
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: `skills`,
         path: `${__dirname}/data/experience`,
       }
