@@ -65,6 +65,7 @@
 .project-title {
     padding: 1vw;
     font-size: 4vh;
+    max-width: 25vw;
     text-align: center;
     color: black
 }
@@ -108,6 +109,13 @@
 .project-wrapper:hover .project-date {
     z-index: 5;
     font-family: "BodyBold";
+}
+
+@media only screen and (max-width: 1050px) {
+    .project-title {
+        font-size: 3.5vh;
+        max-width: 100vw;
+    }
 }
 
 @media only screen and (max-width: 650px) {

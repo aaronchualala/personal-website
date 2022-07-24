@@ -6,9 +6,10 @@ import {expContainer, tab, activeTab, contentAllText, contentDescription, conten
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const ExperiencePage = ({ data }) => {
+  const defaultExperience = data.allMdx.nodes[0]
   const checkExp = (node) => {return !node.fileAbsolutePath.includes('project-')}
-  const checkProj = (node) => {return data.mdx.frontmatter.projects.includes(node.slug)}
-
+  const checkProj = (node) => {return defaultExperience.frontmatter.projects.includes(node.slug)}
+  
   return (
     <Layout pageTitle="Experience">
       <div className={expContainer}>
@@ -17,7 +18,7 @@ const ExperiencePage = ({ data }) => {
         {
             data.allMdx.nodes.filter(checkExp).map((node) => (
                 <Link to={`/experience/${node.slug}`} key={node.id}>
-                  <button className={node.id === data.mdx.id && activeTab}>
+                  <button className={node.id === defaultExperience.id && activeTab}>
                       {node.frontmatter.tabTitle}
                   </button>
                 </Link>
@@ -28,19 +29,19 @@ const ExperiencePage = ({ data }) => {
 
         <GatsbyImage  
           className={contentImage}
-          image={getImage(data.mdx.frontmatter.backgroundImage)}
-          alt={data.mdx.frontmatter.backgroundImage_alt}
+          image={getImage(defaultExperience.frontmatter.backgroundImage)}
+          alt={defaultExperience.frontmatter.backgroundImage_alt}
           imgStyle={{objectFit: `contain`}}
           style={{gridRow: 2, gridColumn: 2, position:"relative", top:'0px'}}/>
         <main className={contentAllText}>
-            <h2>{data.mdx.frontmatter.myJob}<a href={data.mdx.frontmatter.orgLink}>{data.mdx.frontmatter.orgName?" @"+data.mdx.frontmatter.orgName:""}</a></h2>
+            <h2>{defaultExperience.frontmatter.myJob}<a href={defaultExperience.frontmatter.orgLink}>{defaultExperience.frontmatter.orgName?" @"+defaultExperience.frontmatter.orgName:""}</a></h2>
             <h3>
-              {data.mdx.frontmatter.startDate?data.mdx.frontmatter.startDate+" – ":""}
-              {data.mdx.frontmatter.endDate?data.mdx.frontmatter.endDate:(data.mdx.frontmatter.startDate?"Present":"")}
+              {defaultExperience.frontmatter.startDate?defaultExperience.frontmatter.startDate+" – ":""}
+              {defaultExperience.frontmatter.endDate?defaultExperience.frontmatter.endDate:(defaultExperience.frontmatter.startDate?"Present":"")}
             </h3>
             <div className={contentDescription}> 
                 <MDXRenderer>
-                  {data.mdx.body}
+                  {defaultExperience.body}
                 </MDXRenderer>
             </div>
 
@@ -65,33 +66,27 @@ const ExperiencePage = ({ data }) => {
 }
 
 export const query = graphql`
-query ($id: String) {
-  mdx(id: {eq: $id}) {
-    frontmatter {
-      tabTitle
-      orgName
-      orgLink
-      myJob
-      startDate(formatString: "MMM YYYY")
-      endDate(formatString: "MMM YYYY")
-      backgroundImage {
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
-      projects
-    }
-    id
-    body
-  }
+query {
   allMdx(
     sort: {fields: frontmatter___endDate, order: DESC}) {
     nodes {
       frontmatter {
         tabTitle
         projTitle
+        orgName
+        orgLink
+        myJob
+        startDate(formatString: "MMM YYYY")
+        endDate(formatString: "MMM YYYY")
+        backgroundImage {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        projects
       }
       id
+      body
       slug
       fileAbsolutePath
     }

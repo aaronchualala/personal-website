@@ -22,7 +22,7 @@ const ProjectPage = ({ data }) => {
               <p className={projectTitle}>
                   {node.frontmatter.projTitle}
               </p>
-              <p className={projectDate}>{node.frontmatter.endDate}</p>
+              <p className={projectDate}>{node.frontmatter.startDate} – {node.frontmatter.endDate}</p>
               <div></div>
           </Link>
         ))
@@ -39,7 +39,8 @@ query {
     filter: {fileAbsolutePath: {regex: "/projects/"}}) {
     nodes {
       frontmatter {
-        endDate(formatString: "MMMM YYYY")
+        startDate(formatString: "MMM YYYY")
+        endDate(formatString: "MMM YYYY")
         projTitle
         backgroundImage_alt
         backgroundImage {

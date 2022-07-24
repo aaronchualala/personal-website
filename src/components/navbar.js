@@ -20,7 +20,7 @@ const Navbar = ({data}) => {
   const navLinkItems = (__LinkItem, __LinkText, __LinkTextActive) => sections.map((section)=>
     <li className={__LinkItem}>
       <Link 
-        to={"/".concat(section.slice(section).toLowerCase()).concat(section==="Experience"?"/accenture":"")} 
+        to={"/".concat(section.slice(section).toLowerCase())} //.concat(section==="Experience"?"/ntu":"")} 
         className={__LinkText}
         activeClassName={__LinkTextActive}
         partiallyActive={section?true:false}>
