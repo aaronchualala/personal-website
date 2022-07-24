@@ -22,6 +22,7 @@
 * {
     text-decoration: none;
     font-family: "Body";
+    font-size: 3vh;
 }
 
 a {
@@ -50,6 +51,7 @@ body {
     font-weight: bold;
     font-family: "Title";
     margin: 0px;
+    font-size: 5vh;
 }
 
 .section-container {

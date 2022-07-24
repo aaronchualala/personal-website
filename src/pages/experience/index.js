@@ -57,10 +57,10 @@ const ExperiencePage = ({ data }) => {
           style={{gridRow: 2, gridColumn: 2, position:"relative", top:'0px'}}/>
         <main className={contentAllText}>
             <h2>{view.myJob}<a href={view.orgLink}>{view.orgName?" @"+view.orgName:""}</a></h2>
-            <h4>
+            <h3>
               {view.startDate?view.startDate+" – ":""}
               {view.endDate?view.endDate:(view.startDate?"Present":"")}
-            </h4>
+            </h3>
             <div className={contentDescription}> 
                 <MDXRenderer>
                   {view.myImpact}

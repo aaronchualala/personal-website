@@ -54,10 +54,10 @@
 .content-image {
     height: inherit;
     width: inherit;
-    opacity: 0.35;
-    -moz-opacity: 0.35;
-    -webkit-opacity: 0.35;
-    filter: alpha(opacity=35);
+    opacity: 0.45;
+    -moz-opacity: 0.45;
+    -webkit-opacity: 0.45;
+    filter: alpha(opacity=45);
     z-index: 1;
     border-radius: 3%;
 }
@@ -69,6 +69,10 @@
     color: black
 }
 
+.project-date {
+    color: black
+}
+
 .project-info {
     padding: 1vw;
     font-size: 3vh;
@@ -77,11 +81,11 @@
 }
 
 .project-wrapper:hover .content-image {
-    opacity: 0.45;
-    -webkit-opacity: 0.45;
-    -moz-opacity: 0.45;
-    -webkit-opacity: 0.45;
-    filter: alpha(opacity=45);
+    opacity: 0.65;
+    -webkit-opacity: 0.65;
+    -moz-opacity: 0.65;
+    -webkit-opacity: 0.65;
+    filter: alpha(opacity=65);
 }
 
 .project-wrapper:hover .project-title {
