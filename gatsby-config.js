@@ -11,10 +11,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: `src/images/self-photo-circle.png`,
+        icon: `src/images/self-photo-circle-resized.png`,
         icons: [
           {
-            src: `src/images/self-photo-circle.png`,
+            src: `src/images/self-photo-circle-resized.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
