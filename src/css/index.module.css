@@ -61,6 +61,7 @@
 .image {
     display: flex;
     align-items: center;
+    transform: scale(0.9);
 }
 
 @media only screen and (max-width: 1200px) {

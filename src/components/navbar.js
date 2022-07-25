@@ -11,7 +11,7 @@ import {
     navLinkText,
     navLinkTextActive
   } from '../css/components/navbar.module.css'
-import SelfPhoto from "../images/self-photo-circle.png"
+import SelfPhoto from "../images/favicon.ico"
 
 const Navbar = ({data}) => {
   const [sideBar,setSideBar] = React.useState("none")

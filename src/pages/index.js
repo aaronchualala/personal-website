@@ -22,7 +22,7 @@ const AboutPage = () => {
           <div class={column + " " + image}>
             <StaticImage class={image}
               alt="Aaron Profile"
-              src="../images/self-photo-circle.png"/>
+              src="../images/self-photo-circle-resized.png"/>
           </div>
         </div>
       </div>

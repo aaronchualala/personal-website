@@ -113,6 +113,21 @@
     }
 }
 
+
+@media screen and (max-width: 490px) {
+    .nav-side-bar {
+        padding-top: 50px;
+    }
+
+    .nav-link-text {
+        font-size: 18px;
+    }
+
+    .nav-link-item {
+        padding: 0.5rem
+    }
+}
+
 @media screen and (max-height: 650px) {
     .nav-side-bar {
         padding-top: 50px;
