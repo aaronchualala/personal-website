@@ -42,10 +42,10 @@
 
 /* Style the tab content */
 .content-image {
-    opacity: 0.3;
-    -webkit-opacity: 0.3;
-    -moz-opacity: 0.3;
-    filter: alpha(opacity=30);
+    opacity: 0.05;
+    -webkit-opacity: 0.05;
+    -moz-opacity: 0.05;
+    filter: alpha(opacity=05);
     z-index: 1;
     transform: scale(0.8);
 }
