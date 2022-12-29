@@ -17,16 +17,16 @@ const Layout = ({ pageTitle, children }) => {
     }
   `)
   return (
-    <MDXProvider components={{Link}}>
-      <div className={container}>
-        <title>{pageTitle?pageTitle+" | ":""}{data.site.siteMetadata.title}</title>      
-        <Navbar/>
-        <main className={sectionContainer}>
-          {children}
-        </main>
-        <Footer/>
-      </div>
-    </MDXProvider>
+      <MDXProvider components={{Link}}>
+        <div className={container}>
+          <title>{pageTitle?pageTitle+" | ":""}{data.site.siteMetadata.title}</title>      
+          <Navbar/>
+          <main className={sectionContainer}>
+            {children}
+          </main>
+          <Footer/>
+        </div>
+      </MDXProvider>
   )
 }
 

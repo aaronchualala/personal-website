@@ -35,5 +35,13 @@ module.exports = {
         path: `${__dirname}/data/projects`,
       }
     },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        includeInDevelopment: true, // optional parameter to include script in development
+        id: 3304374,
+        sv: 6,
+      },
+    },
   ],
 }
